@@ -7,8 +7,8 @@ To implement the given logic function using NAND and NOR gates and to verify its
 F=((C'.B.A)'(D'.C.A)'(C.B'.A)')' using NAND gate
 F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')' using NOR gate
 ## Equipments Required:
-## Hardware – PCs, Cyclone II , USB flasher
-## Software – Quartus prime
+ Hardware – PCs, Cyclone II , USB flasher
+ Software – Quartus prime
 
 
 ## Theory
@@ -26,18 +26,48 @@ NOR gate is actually a combination of two logic gates: OR gate followed by NOT g
 
 F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 
-## Logic Diagram
+
 ## Procedure
+The input and output variables are allocated with letter symbols. The exact truth table that defines the required relationships between inputs and outputs is derived. The simplified Boolean function is obtained from each output. The logic diagram is drawn
 ## Program:
+```py
 /*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by:R.Kavi Keerthana 
+RegisterNumber:212222100022
+
+module cpmbine(a,b,c,d,f);
+input a,b,c,d;
+output f;
+wire p,q,r;
+assign p=(~c & b & a);
+assign q=(~d & c & c & a);
+assign r=(c & ~b & a);
+assign f=(~(~p & ~q & ~r));
+endmodule
+
+module cpmbine(a,b,c,d,f);
+input a,b,c,d;
+output f;
+wire p,q,r;
+assign p=(~c & b & a);
+assign q=(~d & c & c & a);
+assign r=(c & ~b & a);
+assign f=(~(~p & ~q & ~r));
+endmodule
 */
+```
 ## RTL realization
 
 ## Output:
 ## RTL
+![de exp 2](https://user-images.githubusercontent.com/120431120/232959628-975051df-f0ee-4cd7-acc6-0841eee4092e.png)
+![de exp 2](https://user-images.githubusercontent.com/120431120/232959695-6664210c-a0cd-4fdc-aa64-8a07ebb03126.png)
+
 ## Timing Diagram
+![de exp wf](https://user-images.githubusercontent.com/120431120/232960221-a3701a4d-6e73-477a-89a2-4e8ea16c20c0.png)
+
+![de exp wf1](https://user-images.githubusercontent.com/120431120/232960151-dc6f7622-bb88-4497-8714-db163445bb2a.png)
+
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
